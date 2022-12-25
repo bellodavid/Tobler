@@ -3,21 +3,19 @@ import { StyleSheet, Text, View } from 'react-native';
 import CustomersScreen from './screens/CustomersScreen';
 import {TailwindProvider} from 'tailwind-rn';
 import utilities from './tailwind.json';
+import { NavigationContainer } from '@react-navigation/native';
+import RootNavigator from './navigator/RootNavigator';
+
+
 
 export default function App() {
   return (
-    // @ts-ignore - TilwindProvider is missing a type definition
+    // @ts-ignore - TailwindProvider is missing a type definition
+    
     <TailwindProvider utilities={utilities}>
-   <CustomersScreen />
+   <NavigationContainer>
+    <RootNavigator/>
+   </NavigationContainer>
    </TailwindProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'orange',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

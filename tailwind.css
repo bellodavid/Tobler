@@ -30,6 +30,14 @@
   display: none
 }
 
+.h-64 {
+  height: 16rem
+}
+
+.w-full {
+  width: 100%
+}
+
 .border {
   border-width: 1px
 }
@@ -40,9 +48,4 @@
 
 .capitalize {
   text-transform: capitalize
-}
-
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity))
 }
