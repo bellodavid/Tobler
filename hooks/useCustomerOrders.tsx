@@ -4,10 +4,33 @@ import { GET_ORDERS } from '../graphql/queries'
 
 
 
-const useCustomerOrders = () => {
-  return (
-    <div>useCustomerOrders</div>
-  )
-}
+
+const useCustomerOrders =(userId: string) => {
+
+    const {loading, error, data} = useQuery(GET_ORDERS)
+    const [orders, setOrders] = useState<Order[]>([]);
+
+    useEffect(() => {
+        if (!data) return;
+
+        const orders: Order[] = data.getOrders.map(({value}: OrderResponse) => {
+            carrier: value.carrier;
+            createdAt: value.createdAt
+            shippingCost: value.shippingCost;
+            trackingId: value.trackingId;
+            trackingItems: value.trackingItems;
+            Address: value.Address;
+            City: value.City;
+            Lat: value.Lat;
+            Lng: value.Lng;
+        })}, [data])
+
+        const customerOrders = orders.filter(
+            (order) => order.trackingItems.customer_id === userId
+            );
+            
+            setOrders(customerOrders);
+  return {loading, error, orders};
+};
 
 export default useCustomerOrders
