@@ -13,20 +13,23 @@ const useOrders =() => {
     useEffect(() => {
         if (!data) return;
 
-        const orders: Order[] = data.getOrders.map(({value}: OrderResponse) => {
-            carrier: value.carrier;
-            createdAt: value.createdAt
-            shippingCost: value.shippingCost;
-            trackingId: value.trackingId;
-            trackingItems: value.trackingItems;
-            Address: value.Address;
-            City: value.City;
-            Lat: value.Lat;
-            Lng: value.Lng;
-        })}, [data])
+        const orders: Order[] = data.getOrders.map(({value}: OrderResponse) => ({
+            carrier: value.carrier,
+            createdAt: value.createdAt,
+            shippingCost: value.shippingCost,
+            trackingId: value.trackingId,
+            trackingItems: value.trackingItems,
+            Address: value.Address,
+            City: value.City,
+            Lat: value.Lat,
+            Lng: value.Lng
+        }));
 
-        setOrders(orders);
+        setOrders(orders); 
+    }, [data]);
+
+        
   return {loading, error, orders};
 };
 
-export default useOrders
+export default useOrders;

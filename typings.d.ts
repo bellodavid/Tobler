@@ -1,22 +1,22 @@
 type Customer = {
-    email: String
-    name: String
+    email: string;
+    name: string;
     };
     
     type CustomerList = {
-    name: ID
-    value: Customer
+    name: ID;
+    value: Customer;
     };
 
     type Order = {
-        carrier: String;
-        createdAt: Date;
-        shippingCost: Int;
-        trackingId: String;
-        Address: String;
+        carrier: string;
+        createdAt: string;
+        shippingCost: number;
+        trackingId: string;
+        Address: string;
         City: String;
-        Lat: Float;
-        Lng: Float;
+        Lat: number;
+        Lng: number;
         trackingItems: TrackingItems;
           
       };
@@ -35,16 +35,16 @@ type Customer = {
         value: Customer;
         };
 
-      type Items = {
-        item_id: Int
-        name: String
-        price: Float
-        quantity: Int
+      type Item = {
+        item_id: ID;
+        name: string;
+        price: number;
+        quantity: number;
       };
 
-      type TrackingItems = {
-        customer_id: String
-        items: [Items]
+      type TrackingItem = {
+        customer_id: string
+        items: Items[]
         customer: Customer
 
       };
