@@ -6,7 +6,7 @@ const Glass = () => {
   const [time, setTime] = useState<string>("")
   //Working with master card
   //Not so good
-  //As though I am working with a glass
+ const way = 5;
   return (
     <View>
       <Text>Glass</Text>
