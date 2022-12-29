@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Glass = () => {
+const Glass = ({email}) => {
   return (
     <View>
-      <Text>Glass</Text>
+      <Text>{email}</Text>
     </View>
   )
 }
