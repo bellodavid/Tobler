@@ -1,8 +1,7 @@
 import { View, Text } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 
 const Glass = () => {
-  const [name, setName] =useState<string>("All")
   return (
     <View>
       <Text>Glass</Text>
