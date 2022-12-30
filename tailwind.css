@@ -14,6 +14,18 @@
   position: relative
 }
 
+.mt-5 {
+  margin-top: 1.25rem
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem
+}
+
+.ml-auto {
+  margin-left: auto
+}
+
 .block {
   display: block
 }
@@ -36,6 +48,22 @@
 
 .w-full {
   width: 100%
+}
+
+.flex-row {
+  flex-direction: row
+}
+
+.items-center {
+  align-items: center
+}
+
+.justify-end {
+  justify-content: flex-end
+}
+
+.justify-between {
+  justify-content: space-between
 }
 
 .rounded-lg {
@@ -66,6 +94,20 @@
 
 .pb-0 {
   padding-bottom: 0px
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem
+}
+
+.font-bold {
+  font-weight: 700
 }
 
 .uppercase {

@@ -12,6 +12,7 @@ import { useQuery } from '@apollo/client';
 import CustomerCard from '../components/CustomerCard';
 import Glass from '../components/Glass';
 
+
 export type CustomersScreenNavigationProp = CompositeNavigationProp<
 BottomTabNavigationProp<TabStackParamList, 'Customers'>, NativeStackNavigationProp<RootStackParamList>
 >
@@ -31,13 +32,15 @@ const CustomersScreen = () => {
   return (
     <ScrollView style ={{backgroundColor: "#59C1CC"}}>
       <Image 
-        source = {{uri: 'https://links.papareact.com/3jc'}}
+        source = {{uri: 'https://i.imgur.com/uU8GTZM.jpeg'}}
         containerStyle ={tw("w-full h-64")}/>
 
     <Input placeholder="Search by customer" value ={input} onChangeText={setInput}
       containerStyle={tw("bg-white pt-5 pb-0 px-10")}/>  
+    
+      <CustomerCard name="Ball" userId="WXCDD123" email='john@gmail.com'/>
      
-      <CustomerCard email ={email}/>
+      
     </ScrollView>
   )
 }

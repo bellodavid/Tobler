@@ -1,19 +1,14 @@
 import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 
- //Working with master card
+ 
 
-const Glass = () => {
-  const [name, setName] =useState<string>("All")
-  const [time, setTime] = useState<string>("")
-
- const way = 5;
-
-
+const Glass = ({name, userId}) => {
 
   return (
     <View>
-      <Text>Glass</Text>
+      <Text>{name}</Text>
+      <Text>{userId}</Text>
     </View>
   )
 }
