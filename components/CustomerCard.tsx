@@ -5,7 +5,6 @@ import { useTailwind } from 'tailwind-rn/dist';
 import { useNavigation } from '@react-navigation/native';
 import { CustomersScreenNavigationProp } from '../screens/CustomersScreen';
 import { Card, Icon } from '@rneui/themed';
-import { dummy } from '../graphql/dummy';
 import { GET_CUSTOMERS } from '../graphql/queries';
 
 
@@ -19,7 +18,11 @@ const CustomerCard = ({email, userId, name}: Props) => {
     const tw = useTailwind();
     const navigation = useNavigation<CustomersScreenNavigationProp>();
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() =>
+    navigation.navigate("MyModal", {
+      name: name,
+      userId: userId,
+    })}>
       <Card containerStyle={tw("bg-white p-5 rounded-lg mt-5")}>
       <View>
         <View style ={tw("flex-row justify-between")}>
@@ -27,8 +30,7 @@ const CustomerCard = ({email, userId, name}: Props) => {
           <Text style={tw("text-2xl font-bold")}>{name}</Text>
           <Text style={[tw("text-sm"), {color: "#59C1CC"}]}>{userId}</Text>
           </View>
-        
-
+     
         <View style={tw("flex-row items-center justify-end")}>
           <Text style={{color: "#59C1CC"}}>{loading? "loading..." : `${orders.length} x`}
           </Text>
