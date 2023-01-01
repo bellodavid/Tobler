@@ -35,7 +35,7 @@ const DeliveryCard = ({ order }:Props) => {
         <Divider color="white" />
      </View>
 
-     <View style={tw("mx-auto")}>
+     <View style={tw("mx-auto pb-5")}>
      <Text style={tw("text-base text-center text-white font-bold mt-5")}>Address</Text>
      <Text style={tw("text-sm text-center text-white")}>16C GJC</Text>
      <Text style={tw("text-sm text-center italic text-white")}>Shipping Cost: $20</Text>
@@ -58,13 +58,13 @@ const DeliveryCard = ({ order }:Props) => {
     }}
     style={[tw("w-full"), { height: 200 }]}>
         <Marker
-        cordinate={{
+        coordinate={{
             latitude: 37.78825,
             longitude: -122.4324,
         }}
         title="Delivery Location"
         description="This is the delivery location"
-        identifiers="desination"
+        identifier="desination"
         />
     </MapView>
     </Card>
