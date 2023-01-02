@@ -6,6 +6,7 @@ import { TabStackParamList } from '../navigator/TabNavigator';
 import { RootStackParamList } from '../navigator/RootNavigator';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useTailwind } from 'tailwind-rn/dist';
+import DeliveryCard from '../components/DeliveryCard';
 
 type OrderScreenRouteProp = RouteProp<RootStackParamList, "Order">;
 
@@ -32,7 +33,7 @@ const OrderScreen = () => {
     
   return (
     <View style={tw("-mt-2")}>
-      <Text>OrderScreen</Text>
+     <DeliveryCard fullWidth order={order} />
     </View>
   )
 }
