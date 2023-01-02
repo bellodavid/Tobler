@@ -8,7 +8,8 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useTailwind } from 'tailwind-rn/dist';
 import useOrders from '../hooks/useOrders';
 import { color } from '@rneui/base';
-import { Image } from '@rneui/themed';
+import { Button, Image } from '@rneui/themed';
+import OrderCard from '../components/OrderCard';
 
 type OrderScreenRouteProp = RouteProp<RootStackParamList, "Order">;
 
@@ -35,13 +36,18 @@ const OrdersScreen = () => {
   },[]);
 
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: "#EB6A7C"}}>
       <Image source={{uri: "https://links.papareact.com/m51"}}
       containerStyle={tw("w-full h-64")}/>
 
-      <Button>
+      <Button
+      color="pink"
+      titleStyle={{ color: "gray", fontWeight: "400"}}
+      style={tw("py-2 px-5")}
+      onPress={() => setAscending(!ascending)}>
         {ascending ? "Showing: Oldest First" : "Showing: Most Recent First"}
       </Button>
+      <OrderCard />
     </ScrollView>
   )
 }
