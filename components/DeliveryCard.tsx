@@ -26,7 +26,9 @@ const DeliveryCard = ({ order, fullWidth }:Props) => {
     ]}>
     <View style={fullWidth && {height: "100%"}}>
      <Icon name="box" type="entypo" color="white" size={50} />
-     <View>
+     
+     <View style={tw("items-start p-5 -mt-3")}> 
+       <View style={tw("mx-auto")}>
         <Text style={tw("text-xs text-center uppercase text-white font-bold")}>
             WXY 2023
         </Text>
@@ -41,6 +43,7 @@ const DeliveryCard = ({ order, fullWidth }:Props) => {
      <Text style={tw("text-sm text-center text-white")}>16C GJC</Text>
      <Text style={tw("text-sm text-center italic text-white")}>Shipping Cost: $20</Text>
     </View>
+
     </View>
 
     <Divider color="white"/>
@@ -57,7 +60,7 @@ const DeliveryCard = ({ order, fullWidth }:Props) => {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
     }}
-    style={[tw("w-full"), { height: 200 }]}>
+    style={[tw("w-full"), { flexGrow: 1 }, !fullWidth && { height: 200 }]}>
         <Marker
         coordinate={{
             latitude: 37.78825,
@@ -68,6 +71,7 @@ const DeliveryCard = ({ order, fullWidth }:Props) => {
         identifier="desination"
         />
     </MapView>
+    </View>
     </Card>
   )
 }
